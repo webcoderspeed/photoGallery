@@ -2,8 +2,8 @@ const photoContainer=document.querySelector('.photo-container');
 const search = document.querySelector('.search');
 const form = document.querySelector('form');
 
+let keyword = 'nature';
 form.addEventListener('submit', (e) => {
-  let keyword = 'nature';
   e.preventDefault(); // to prevent page from refreshing
 
   if(search.value!== '' && search.value!==null){
@@ -33,3 +33,4 @@ function fetchData(keyword){
   .catch(err => console.error(err));
 }
 
+fetchData(keyword);

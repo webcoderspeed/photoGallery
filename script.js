@@ -26,8 +26,12 @@ function fetchData(keyword){
     console.log(photos)
     photos.results.map(photo => {
       const img = document.createElement('img');
+      const a = document.createElement('a');
+      a.href = photo.links.download;
+      a.setAttribute('download',"download");
       img.src = photo.urls.small;
-      photoContainer.append(img)
+      a.innerHTML += `<img src=${photo.urls.full} />`
+      photoContainer.append(a);
     })
   })
   .catch(err => console.error(err));
